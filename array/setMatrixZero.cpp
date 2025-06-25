@@ -1,4 +1,4 @@
-/*// Brute force
+// Brute force
 // Approach-1 (By taking extra space) 
 // T.C.: O(m*n *(m+n)), S.C.: O(m*n) 
 #include <bits/stdc++.h>
@@ -68,7 +68,7 @@ int main(){
         cout << endl;
     }
     return 0;
-}*/
+}
 
 /*-----------------------------------------------------------------------*/
 
@@ -77,7 +77,7 @@ int main(){
 // Better Approach
 // T.C.: O(m*n), S.C.: O(m+n)
 
-/*
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -141,7 +141,7 @@ int main(){
     }
     return 0;
 }
-*/
+
 
 
 
