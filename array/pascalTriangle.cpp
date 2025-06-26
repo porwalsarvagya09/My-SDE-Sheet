@@ -4,7 +4,12 @@
 // Variation 2: Given the row number n. Print the n-th row of Pascal’s triangle.
 // Variation 3: Given the number of rows n. Print the first n rows of Pascal’s triangle
 
- 
+/* Application: we can find nCr 
+   where, 
+   n: is the row number.  
+   r: is the column number.
+*/ 
+
 #include <bits/stdc++.h>
 using namespace std;
 
