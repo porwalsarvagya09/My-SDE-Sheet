@@ -1,0 +1,17 @@
+# C/C++ build files
+*.o
+*.obj
+*.exe
+*.out
+build/
+bin/
+
+# VS Code settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+.exe
+.json
