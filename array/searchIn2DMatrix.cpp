@@ -38,6 +38,61 @@ class Solution{
     }
 };
 
+
+
+
+//------------------BETTER APPROACH--------------
+
+// T.C. : O(m + log n)
+// S.C. : O(1)
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    
+    bool binarySearch(vector<int> &nums, int target){
+
+        int n = nums.size();
+
+        int low = 0;
+        int high = n-1;
+  
+        
+        while(low <= high){
+            int mid = low + (high-low)/2;
+
+            if(nums[mid] == target){
+                return true;
+            }
+            else if(target > nums[mid]){
+                low = mid+1;
+            }
+            else{
+                // target < nums[mid]
+                high = mid-1;
+            }
+        }
+
+        return false;
+
+    }
+    
+
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int m = matrix.size();
+        int n = matrix[0].size();
+
+        for(int i=0; i<m; i++){
+            if(matrix[i][0] <= target && matrix[i][n-1] >= target){
+                return binarySearch(matrix[i], target);
+            }
+        }
+        return false;
+    }
+};
+
 int main(){
 
     int m, n;
