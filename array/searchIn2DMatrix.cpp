@@ -41,7 +41,7 @@ class Solution{
 
 
 
-//------------------BETTER APPROACH--------------
+//------------------BETTER APPROACH-----------------------------//
 
 // T.C. : O(m + log n)
 // S.C. : O(1)
@@ -93,6 +93,47 @@ public:
     }
 };
 
+
+
+
+//--------------------OPTIMAL APPROACH -------------------
+
+// T.C. : O(log (m*n))
+// S.C. : O(1)
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int m = matrix.size();
+        int n = matrix[0].size();
+
+        int low = 0;
+        int high = m*n - 1;
+
+       // Do Binary Search
+        while(low <= high){
+            int mid = low + (high - low)/2;
+          
+            // converted mid index to row and column index of matrix
+            int row = mid/n, col = mid%n;
+
+            if(matrix[row][col] == target){
+                return true;
+            }
+            else if(matrix[row][col] <= target){
+                low = mid + 1;
+            }
+            else{
+                high = mid-1;
+            }
+        }
+        return false;
+    }
+};
+/*--------------------------------------------------------------------------------*/
 int main(){
 
     int m, n;
