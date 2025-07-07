@@ -18,7 +18,9 @@ For –2.3, ⌊–2.3⌋ = –3
 
 /*------- BOYER-MOORE VOTING ALGORITHM ----------*/
 
-
+// leetcode- 169
+// T.C. : O(n)
+// S.C. : O(1)
 
 
 #include <bits/stdc++.h>
