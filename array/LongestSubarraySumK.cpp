@@ -3,7 +3,7 @@
 // S.C.: O(n)
 
 
-/*#include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int solve(vector<int>& a) {
@@ -31,7 +31,7 @@ int main() {
     cout << solve(a) << endl;
 
     return 0;
-}*/
+}
 
 
 // ---------------------------------------
