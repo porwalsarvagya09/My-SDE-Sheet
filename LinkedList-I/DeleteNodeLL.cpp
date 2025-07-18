@@ -113,3 +113,102 @@ int main()
 
     return 0;
 }
+
+
+
+
+
+
+/*-----------APPROACH - 2-----------------------------*/
+
+// T.C.= O(1)
+// S.C.= O(1)
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class ListNode{
+    public:
+
+    int val;
+
+    ListNode* next;
+
+    ListNode(int x){
+        this->val = x;
+        next = nullptr;
+    }
+};
+
+void appendNode(ListNode* &head, ListNode* &tail, int value){
+    ListNode* newNode = new ListNode(value);
+
+    if(head == nullptr){
+        head = tail = newNode;
+    }
+    else{
+        tail->next = newNode;
+        tail = newNode;
+    }
+}
+
+void deleteNode(ListNode* node)
+{
+    node->val = node->next->val;
+    node->next = node->next->next;
+}
+
+int main()
+{   
+    ListNode* head = nullptr;
+    ListNode* tail = nullptr;
+
+    int n;
+    cout<<"Enter the size of LL: ";
+    cin>>n;
+    
+    cout<<"Enter "<<n<<" integers: ";
+
+    for(int i=0; i<n; ++i){
+        int val;
+        cin>>val;
+        appendNode(head, tail, val);
+    }
+
+    // Print the L.L before deleting node
+    cout<<"Print the linked list before deleting: ";
+    for(ListNode* curr = head; curr; curr=curr->next){
+        cout<<curr->val<<" ";
+    }
+    cout<<"\n";
+
+    // Find node in Linked List
+
+    int node;
+    cout<<"Enter node value to delete: ";
+    cin>>node;
+
+    ListNode* nodeToDelete = nullptr;
+    for(ListNode* curr = head; curr; curr=curr->next){
+        if(curr->val == node)
+        {
+            nodeToDelete = curr;
+            break;
+        }
+    }
+
+    if(nodeToDelete != nullptr && nodeToDelete->next != nullptr)
+    {
+        deleteNode(nodeToDelete);
+
+        cout<<"After deletion: ";
+
+        for(ListNode* curr = head; curr; curr = curr->next){
+            cout<<curr->val<<" ";
+        }
+    }else{
+        cout<<"Node not found or it's the last node (cannot delete last node with this method).";
+    }
+    return 0;
+}
