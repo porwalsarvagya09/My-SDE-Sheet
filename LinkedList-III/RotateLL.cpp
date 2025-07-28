@@ -1,3 +1,20 @@
+/*
+
+leetcod : 61
+
+Time Complexity: O(Number of nodes present in the list*k)
+
+Reason: For k times, we are iterating through the entire list to get the last element and move it to first.
+
+Space Complexity: O(1)
+
+Reason: No extra data structures is used for computations
+
+
+*/
+
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
