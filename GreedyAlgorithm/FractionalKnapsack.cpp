@@ -61,4 +61,13 @@ int main(){
     return 0;
 }
 
+/*
+Output:
 
+The maximum value is 240.00
+
+Time Complexity: O(n log n + n). O(n log n) to sort the items and O(n) to 
+iterate through all the items for calculating the answer.
+
+Space Complexity: O(1), no additional data structure has been used.
+*/
